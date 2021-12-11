@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Proyecto Seguridad Informática</title>
+</head>
+<body >
+    <div class="container">
+        <div class="row">
+                <div class="card-body  text-black">
+                    <main class="form-register text-center shadow-lg p-3 mb-5">
+                        <form action="/registro" method="POST">
+                            <h1 class="h3 mb-3 fw-normal">Registro de Usuarios</h1>
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre Completo">
+                                    <label for="user">Nombre Completo</label>
+                                  </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="user" name="user" placeholder="Usuario">
+                                    <label for="user">Usuario</label>
+                                  </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Copntraseña">
+                                    <label for="user">Constraseña</label>
+                                  </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-black">
+                                <a href="/login" type="button" class="btn btn-secondary">Cancelar</a>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </form>
+                    </main>
+                </div>
+        </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if (alert){ %>
+        <script>
+            Swal.fire({
+                icon: '<%= alertIcon %>',
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage %>',
+                showConfirmButton: <%= showConfirmButton %>,
+                timer: <%= timer %>,
+            }).then(() => {
+                    window.location = "/<%= ruta %>"
+                })
+        </script>
+        <% } %>
+</body>
+</html>
